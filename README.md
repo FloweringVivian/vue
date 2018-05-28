@@ -64,7 +64,23 @@ entriy:{
 
 * 注意：这种方法只能让打包之后的项目支持IE9
 
+## 将element-ui的默认语言设置为英文
 
+1. main.js
 
+```javascript
+import Vue from 'vue'
+import ElementUI from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
 
+Vue.use(ElementUI, { locale })
+```
+
+2. webpack.dev.conf.js 和 webpack.prod.conf.js 在plugins增加
+
+```javascript
+plugins: [
+  new webpack.NormalModuleReplacementPlugin(/element-ui[\/\\]lib[\/\\]locale[\/\\]lang[\/\\]zh-CN/, 'element-ui/lib/locale/lang/en')
+]
+```
 
