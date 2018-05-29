@@ -71,3 +71,11 @@ plugins: [
 ]
 ```
 
+## vue img 的 src 绑定问题
+
+```javascript
+<img :src="imgUrl">
+```
+
+当imgUrl设置为本地相对路径的一个图片之后，发现无法显示，正确的做法是把图片文件放到static文件夹下即可
+
