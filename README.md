@@ -5,6 +5,12 @@
 ## Build Setup
 
 ``` bash
+#install vue
+npm install vue
+
+#install vue-cli
+npm install --global vue-cli
+
 # install dependencies
 npm install
 
