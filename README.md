@@ -85,6 +85,35 @@ plugins: [
 
 当imgUrl设置为本地相对路径的一个图片之后，发现无法显示，正确的做法是把图片文件放到static文件夹下即可
 
+## 改变vue打包的路径
+
+修改config目录下的index.js
+
+```javascript
+var path = require('path')
+
+module.exports = {
+    build: {
+        env: require('./prod.env'),
+        index: path.resolve(__dirname, '../dist/index.html'),  //修改此处
+        assetsRoot: path.resolve(__dirname, '../dist'),  //修改此处
+        assetsSubDirectory: 'static',
+        assetsPublicPath: '/',
+        productionSourceMap: true,
+        // Gzip off by default as many popular static hosts such as
+        // Surge or Netlify already gzip all static assets for you.
+        // Before setting to `true`, make sure to:
+        // npm install --save-dev compression-webpack-plugin
+        productionGzip: false,
+        productionGzipExtensions: ['js', 'css'],
+        // Run the build command with an extra argument to
+        // View the bundle analyzer report after build finishes:
+        // `npm run build --report`
+        // Set to `true` or `false` to always turn it on or off
+        bundleAnalyzerReport: process.env.npm_config_report
+    },    
+}
+```
 
 
 
