@@ -115,5 +115,29 @@ module.exports = {
 }
 ```
 
+## vue + element-ui实现表单校验时，根据条件不同设置必填校验的方法实现
+
+例如：登录页面密码输错3次以后显示图片验证码，并对图片验证码进行非空校验
+
+```javascript
+<template>
+...
+    <el-form-item prop="captcha" v-show="isShowCaptcha" 
+        :rules="this.isShowCaptcha == true?loginRule.captcha:[{required: false, message: '请输入图片验证码', trigger: 'blur'}]">
+    </el-form-item>
+...
+</template>
+
+<script>
+export default {
+    return {
+        loginRule: {
+            captcha: [{required: true, message: '请输入图片验证码', trigger: 'blur'}]
+        }
+    }
+}
+</script>
+```
+
 
 
