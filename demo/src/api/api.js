@@ -8,6 +8,7 @@ axios.defaults.baseURL = '/api';  //开发环境
 
 export function ajax(url, params, method) {
     return new Promise((resolve, reject) => {
+
     	if (method && method == 'get') {
     		axios.get(url, params).then(response => {  
                 if (response.data.code == 10) {  //session失效
@@ -23,7 +24,9 @@ export function ajax(url, params, method) {
 	        }).catch((error) => {
 	            reject(error);
 	        })
+
     	} else {
+
     		axios.post(url, params).then(response => {        	
             	if (response.data.code == 10) {  //session失效
                     Message({
@@ -38,6 +41,7 @@ export function ajax(url, params, method) {
 	        }).catch((error) => {
 	            reject(error);
 	        })
+            
     	};
     })
 };
