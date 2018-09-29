@@ -1,0 +1,89 @@
+$common-color: #19ac9e;
+
+html, body, button, input, select, textarea, p, h1, h2, h3, h4, h5, h6, a {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;;
+	font-size: 14px;
+	color: #353535;
+	-webkit-font-smoothing: antialiased;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+img {
+	vertical-align: top;
+}
+
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+
+a,
+a:hover,
+a:focus {
+	outline: none;
+	text-decoration: none;
+}
+
+.table-pager {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.content-container {
+	overflow: hidden;
+	padding: 20px;
+}
+
+.table-list {
+	min-height: 443px;
+}
+
+.table-list .fa {
+	color: #777;
+	margin-right: 5px;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.el-input__inner {
+	border-color: #d5d5d5;
+}
+
+.el-table .cell, .el-table th>div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.search-header {
+	background: #f2f2f2;
+	padding-top: 20px;
+    margin-bottom: 20px;
+}
+.btn-header {
+	padding-bottom: 20px;
+}
+.el-dialog {
+	width: 650px;
+}
+.el-dialog .el-form {
+	width: 90%;
+}
+.el-dialog .el-form .el-select {
+	display: block;
+}
+
+
