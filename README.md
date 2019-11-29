@@ -163,4 +163,13 @@ new Vue({
 })
 ```
 
+## element-ui自定义表单规则后，红色必填星号不显示
+
+在自定义的一项那里加上required星号就显示出来了
+
+```javascript
+<el-form-item label="公司名称" prop="name" required>
+  <el-input v-model="form.name"></el-input>
+</el-form-item>
+```
 
