@@ -172,4 +172,3 @@ new Vue({
   <el-input v-model="form.name"></el-input>
 </el-form-item>
 ```
-
