@@ -172,3 +172,48 @@ new Vue({
   <el-input v-model="form.name"></el-input>
 </el-form-item>
 ```
+
+## element-ui表单校验某几项
+
+有时候我们需要只校验表单的某一项，比如获取手机验证码，要校验手机号必填，此时可以用validateField
+
+```javascript
+//phone就是定义的prop字段名称
+this.$refs.registerForm.validateField('phone', (errMsg) => {
+    if (!errMsg) {
+        console.log('手机号校验通过);
+        //调接口
+    } else {
+        console.log('手机号校验不通过);
+    };
+})
+```
+
+如果校验2项或以上，比如获取手机验证码，要校验手机号和图片验证码，此时prop可以传数组
+
+```javascript
+this.$refs.registerForm.validateField(['phone', 'captcha'], (errMsg) => {
+    if (!errMsg) {
+        console.log('手机号、图片验证码校验通过);
+        //调接口
+    } else {
+        console.log('手机号、图片验证码校验不通过);
+    };
+})
+```
+
+这样写之后发现一个问题，第一次点击“获取手机验证码”后正常，手机号和图片验证码出现必填提示
+
+但是手机号填了之后，图片验证码没填的情况下，点击“获取手机验证码”就走到调接口这步了，说明校验通过了
+
+所以，下面这个写法才是最终正确的答案。
+
+```javascript
+if (this.registerForm.phone == '' || this.registerForm.captcha == '') {
+    this.$refs['registerForm'].validateField('phone');
+    this.$refs['registerForm'].validateField('captcha');
+} else {
+    console.log('手机号、图片验证码校验通过);
+    //调接口
+})
+```
