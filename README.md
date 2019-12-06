@@ -219,5 +219,3 @@ if (this.registerForm.phone == '' || this.registerForm.captcha == '') {
 ```
 
 
-
-
