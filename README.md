@@ -78,7 +78,7 @@ module.exports = {
         index: path.resolve(__dirname, '../dist/index.html'),  //修改此处
         assetsRoot: path.resolve(__dirname, '../dist'),  //修改此处
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
+        assetsPublicPath: '/',  //修改打包后的文件的引入路径(例如/package/)
         productionSourceMap: true,
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.
