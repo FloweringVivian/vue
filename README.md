@@ -169,5 +169,49 @@ Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
 
 ## vue定义全局公共函数
 
+1. 定义全局公共函数js文件，例如：src/common/js/util.js
 
+util.js文件内容如下：
 
+```javascript
+export default {
+    getQueryStringByName: function (val) {
+        
+    },
+    formatterDepartment: function(val) {
+        switch(val) {
+            case '1':
+                return '人力资源部';
+                break;
+            case '2':
+                return '技术部';
+                break;
+            case '3':
+                return '客服部';
+                break;
+            case '4':
+                return '市场部';
+                break;
+            case '5':
+                return '产品部';
+                break;
+        };
+    },
+};
+```
+
+2. main.js中添加以下代码
+
+```javascript
+//全局方法
+import util from './common/js/util.js'
+Vue.prototype.util = util;
+```
+
+3. vue文件中调用
+
+```javascript
+departmentFormatter(row, column, cellValue) {
+  return this.util.formatterDepartment(cellValue);
+},
+```
