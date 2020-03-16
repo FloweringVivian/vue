@@ -121,7 +121,7 @@ new Vue({
 
 ## vue中实现点击空白处隐藏功能
 
-参考标签修改功能
+
 
 ## vue定义全局过滤器
 1. 定义过滤器js文件，例如：src/common/filters/filter.js
