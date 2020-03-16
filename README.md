@@ -122,3 +122,52 @@ new Vue({
 ## vue中实现点击空白处隐藏功能
 
 参考标签修改功能
+
+## vue定义全局过滤器
+1. 定义过滤器js文件，例如：src/common/filters/filter.js
+
+filter.js文件内容如下：
+
+```javascript
+//所属部门
+exports.departmentFilter = (value) => {
+    switch(value) {
+        case '1':
+            return '人力资源部';
+            break;
+        case '2':
+            return '技术部';
+            break;
+        case '3':
+            return '客服部';
+            break;
+        case '4':
+            return '市场部';
+            break;
+        case '5':
+            return '产品部';
+            break;
+    };
+};
+```
+
+2. main.js中添加以下代码
+
+```javascript
+//全局过滤器
+import filters from './common/filters/filter.js'
+Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
+```
+
+3. vue文件中调用
+
+```javascript
+<el-form-item label="所属部门：" label-width="120px">
+  <span>{{ adminFormView.department | departmentFilter }}</span>
+</el-form-item>
+```
+
+## vue定义全局公共函数
+
+
+
