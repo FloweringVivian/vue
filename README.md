@@ -215,3 +215,5 @@ departmentFormatter(row, column, cellValue) {
   return this.util.formatterDepartment(cellValue);
 },
 ```
+
+
