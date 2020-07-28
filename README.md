@@ -216,4 +216,3 @@ departmentFormatter(row, column, cellValue) {
 },
 ```
 
-
